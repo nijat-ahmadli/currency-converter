@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.nijatahmadli.converter.presentation.converter.viewModel.ConverterItemViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/margin_big">
+
+        <ImageView
+            android:id="@+id/currency_image"
+            android:layout_width="@dimen/currency_flag_dimension"
+            android:layout_height="@dimen/currency_flag_dimension"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:setFlag="@{viewModel.currencyCode}" />
+
+        <TextView
+            android:id="@+id/currency_code"
+            style="@style/CurrencyCode"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_big"
+            android:layout_marginTop="@dimen/margin_small"
+            android:layout_marginEnd="@dimen/margin_default"
+            android:text="@{viewModel.currencyCode}"
+            app:layout_constraintEnd_toStartOf="@id/currency_value"
+            app:layout_constraintStart_toEndOf="@id/currency_image"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="USD" />
+
+        <TextView
+            android:id="@+id/currency_name"
+            style="@style/CurrencyName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_big"
+            android:layout_marginEnd="@dimen/margin_default"
+            android:layout_marginBottom="@dimen/margin_small"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/currency_value"
+            app:layout_constraintStart_toEndOf="@id/currency_image"
+            app:layout_constraintTop_toBottomOf="@id/currency_code"
+            app:setName="@{viewModel.currencyCode}"
+            tools:text="US dollar" />
+
+        <EditText
+            android:id="@+id/currency_value"
+            style="@style/CurrencyValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:imeOptions="actionDone"
+            android:inputType="numberDecimal"
+            app:formatValue="@{viewModel.currencyValue}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="1183.06" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

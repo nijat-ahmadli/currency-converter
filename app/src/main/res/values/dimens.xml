@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin_small">4dp</dimen>
+    <dimen name="margin_default">8dp</dimen>
+    <dimen name="margin_big">16dp</dimen>
+    <dimen name="margin_very_big">32dp</dimen>
+
+    <dimen name="currency_flag_dimension">40dp</dimen>
+</resources>
